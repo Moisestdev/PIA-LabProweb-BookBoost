@@ -22,7 +22,8 @@
   <main class="main-container">
     <h1>Registro de cuenta</h1>
 
-    <form class="registro-form">
+    
+      <form action="procesarRegistro.php" method="POST">
       <div class="columna">
         <label for="usuario">Usuario</label>
         <input type="text" id="usuario" name="usuario" required>
@@ -44,9 +45,9 @@
         <label for="ocupacion">Ocupación</label>
         <select id="ocupacion" name="ocupacion" required>
           <option value="">Selecciona una opción</option>
-          <option value="estudiante">Estudiante</option>
-          <option value="profesor">Profesor</option>
-          <option value="otro">Otro</option>
+          <option value="1">Estudiante</option>
+          <option value="2">Profesor</option>
+          <option value="3">Otro</option>
         </select>
       </div>
 

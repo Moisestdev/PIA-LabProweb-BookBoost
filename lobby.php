@@ -1,50 +1,55 @@
+<?php
+session_start();
+
+// Si el usuario no está autenticado, lo regresamos
+if (!isset($_SESSION['id_usuario'])) {
+    header("Location: IS.html");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio de sesión</title>
-  <link rel="stylesheet" href="IS.css">
+  <title>Página general</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-
-  <!-- Barra de navegación -->
   <header class="header">
     <div class="nav-container">
       <div class="logo"></div>
       <button id="abrirMenu"class="menu-btn">☰ Menú</button>
       <input type="text" placeholder="Buscar" class="search-bar">
-      <a href="IS.html">Iniciar sesión</a>
-      <a href="Perfil.html">Perfil</a>
+      <a >Bienvenido, <?php echo $_SESSION['correo']; ?> 👋</a>
+      <a href="Perfil.php">Perfil</a>
       <button class="add-btn">+</button>
     </div>
   </header>
 
-  <!-- Contenido principal -->
-  <main class="login-container">
-    <section class="login-form">
-      <h1>Inicio de sesión</h1>
-      <form action="procesarLogin.php" method="POST">
-        <label for="correo">Correo</label>
-        <input type="email" name="correo" id="correo" required>
-      
-        <label for="contrasena">Contraseña</label>
-        <input type="password" name="contrasena" id="contrasena" required>
-      
-        <button type="submit">Iniciar sesión</button>
-      </form>
-      
+  <main>
+    <section class="carousel">
+      <div class="carousel-item destacado">
+        <button class="arrow left">←</button>
+        <div class="text">
+          <h2>DESTACADOS</h2>
+          <p>Descripción breve</p>
+        </div>
+      </div>
+
     </section>
 
-    <section class="login-benefits">
-      <h2>Beneficios de tener una cuenta en Bookboost</h2>
-      <p><strong>Perfil personalizado</strong><br>Creación y personalización de tu propio perfil</p>
-      <p><strong>Capacidad de publicar</strong><br>Acceso a la capacidad de publicar opiniones y dar reseñas a libros</p>
-      <p><strong>Edición de publicaciones</strong><br>Podrás editar tu publicación y comentar otras reseñas/publicaciones</p>
-    </section>
-  </main>
+    <section class="reseñas">
+      <h2>Reseñas destacadas de libros</h2>
+      <div class="cards">
+        <div class="card"><div class="img-placeholder"></div><h3>Título</h3><button>Button</button></div>
+        <div class="card"><div class="img-placeholder"></div><h3>Título</h3><button>Button</button></div>
+        <div class="card"><div class="img-placeholder"></div><h3>Título</h3><button>Button</button></div>
+        <div class="card"><div class="img-placeholder"></div><h3>Título</h3><button>Button</button></div>
+        <div class="card"><div class="img-placeholder"></div><h3>Título</h3><button>Button</button></div>
 
-  <!-- Menú desplegable -->
+<!-- Menú desplegable -->
 <div id="menuDesplegable" class="menu-desplegable oculto">
     <div class="menu-content">
       <div class="menu-header">
@@ -73,8 +78,6 @@
       </div>
     </div>
   </div>
-  
-
   <script src="menu.js"></script>
+
 </body>
-</html>
