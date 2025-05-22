@@ -19,7 +19,7 @@ USE `mydb` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`ocupacion` (
   `id_ocupacion` INT NOT NULL AUTO_INCREMENT,
-  `nombre_ocupación` VARCHAR(45) NOT NULL,
+  `nombre_ocupacion` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id_ocupacion`),
   UNIQUE INDEX `nombre_ocupación_UNIQUE` (`nombre_ocupación` ASC) VISIBLE)
 ENGINE = InnoDB;
