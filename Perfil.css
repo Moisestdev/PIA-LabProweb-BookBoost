@@ -1,0 +1,218 @@
+/* GENERAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  
+  body {
+    background: #e0e0e0;
+  }
+  
+  /* HEADER */
+  .header {
+    background: #1a0e0e;
+    color: white;
+    padding: 10px 0;
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    width: 60px;
+    height: 30px;
+    background: #ccc;
+    border-radius: 50%;
+  }
+  
+  .menu-btn {
+    background: none;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .search-bar {
+    flex: 1;
+    min-width: 200px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: none;
+    max-width: 300px;
+  }
+  
+  .nav-container a,
+  .add-btn {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .add-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: none;
+    font-size: 20px;
+    padding: 0;
+    line-height: 26px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  /* PERFIL */
+  .main-container {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  .perfil-usuario {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  
+  .perfil-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .perfil-img {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .perfil-img img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  
+  .perfil-desc {
+    flex: 1;
+  }
+  
+  .perfil-desc h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+  
+  .perfil-desc p {
+    line-height: 1.4;
+  }
+  
+  .perfil-reseñas {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .perfil-reseñas h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  
+  .reseña-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: center;
+  }
+  
+  .reseña-img {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border: 1px solid #333;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .reseña-img img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+  }
+  
+  .reseña-texto {
+    flex: 1;
+  }
+  
+  .reseña-texto strong {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .btn-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .btn-row.right {
+    justify-content: flex-end;
+  }
+  
+  button {
+    padding: 6px 12px;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .perfil-info {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .perfil-desc {
+      text-align: center;
+    }
+  
+    .reseña-item {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .btn-row {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+  

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edición de libro</title>
+  <link rel="stylesheet" href="CS.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="nav-container">
+      <div class="logo"></div>
+      <button id="abrirMenu" class="menu-btn">☰ Menú</button>
+      <input type="text" placeholder="Buscar" class="search-bar">
+      <a href="IS.html">Iniciar sesión</a>
+      <a href="Perfil.html">Perfil</a>
+      <button class="add-btn">+</button>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <h1>Creación de reseña</h1>
+    <form class="resena-form">
+      <div class="form-top">
+        <div class="img-preview">
+          <img id="previewImage" src="placeholder.png" alt="Imagen del libro" />
+        </div>
+
+        <div class="form-fields">
+          <label for="titulo">Título de libro</label>
+          <input type="text" id="titulo" placeholder="Introduce el título del libro" />
+
+          <label for="genero">Género de libro</label>
+          <input type="text" id="genero" placeholder="Introduce el género del libro" />
+
+          <label for="descripcion">Descripción de libro</label>
+          <input type="text" id="descripcion" placeholder="Introduce la descripción del libro" />
+          <label for="autor">Autor del libro</label>
+          <input type="text" id="autor" placeholder="Introduce el autor del libro" />
+          <div class="btn-row">
+            <button type="button" id="addImageBtn">Añadir imagen</button>
+            <button type="button" id="removeImageBtn">Eliminar imagen</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-bottom">
+
+        <label for="resena">Crea tu reseña</label>
+        <textarea id="resena" rows="6" placeholder="Escribe tu reseña aquí..."></textarea>
+      </div>
+
+      <div class="btn-row right">
+        <button type="submit">Crear reseña</button>
+        <button type="reset">Cancelar</button>
+      </div>
+    </form>
+  </main>
+
+  <input type="file" id="fileInput" accept="image/*" style="display: none;" />
+
+<!-- Menú desplegable -->
+<div id="menuDesplegable" class="menu-desplegable oculto">
+  <div class="menu-content">
+    <div class="menu-header">
+      <div class="logo"></div>
+      <input type="text" placeholder="Buscar" class="search-bar">
+      <button id="cerrarMenu" class="close-btn">✕</button>
+    </div>
+
+    <div class="menu-columns">
+      <div class="column">
+        <h2><img src="icon.png" alt="" class="icono"> Géneros</h2>
+        <ul>
+          <li>Suspenso y misterio</li>
+          <li>Romance</li>
+          <li>Ciencia ficción</li>
+          <li>Divulgación científica</li>
+          <li>Leyenda y aventura</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h2><img src="icon.png" alt="" class="icono"> Sobre nosotros</h2>
+        <ul>
+          <li>Contacto</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="menu.js"></script>
+  <script src="CR.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+/* ======== NAVBAR BASE ESTÁNDAR ======== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #e0e0e0;
+}
+
+.header {
+    background: #1a0e0e;
+    color: white;
+    padding: 10px 0;
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+  }
+.logo {
+  width: 50px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.menu-btn {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.search-bar {
+  padding: 6px;
+  border-radius: 5px;
+  border: none;
+  flex-grow: 1;
+  max-width: 300px;
+}
+
+.add-btn {
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ======== RESULTADOS DE BÚSQUEDA ======== */
+.main-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.libro-card {
+  display: flex;
+  gap: 20px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.libro-img img {
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+.libro-info h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.libro-info p {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 14px;
+}
+.menu-desplegable {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #1a0e0e;
+  color: white;
+  z-index: 1000;
+  padding: 20px;
+  display: none;
+  flex-direction: column;
+}
+
+.menu-desplegable.visible {
+  display: flex;
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.menu-header .search-bar {
+  flex: 1;
+  max-width: 400px;
+}
+
+.close-btn {
+  background: white;
+  color: black;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.menu-columns {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.column h2 {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.column li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.icono {
+  width: 20px;
+  height: 20px;
+}

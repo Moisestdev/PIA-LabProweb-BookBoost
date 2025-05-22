@@ -1,0 +1,216 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e0e0e0;
+  }
+  
+  .header {
+      background: #1a0e0e;
+      color: white;
+      padding: 10px 0;
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 0 20px;
+      flex-wrap: wrap;
+    }
+  .logo {
+    width: 50px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 50%;
+  }
+  
+  .menu-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .search-bar {
+    padding: 6px;
+    border-radius: 5px;
+    border: none;
+    flex-grow: 1;
+    max-width: 300px;
+  }
+  .add-btn {
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+/* ======== SOBRE NOSOTROS ======== */
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.about-content {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.equipo, .integrantes {
+  flex: 1 1 45%;
+}
+
+.equipo h1,
+.integrantes h2 {
+  margin-bottom: 15px;
+}
+
+.box {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.integrante-card {
+  display: flex;
+  gap: 15px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.integrante-card img {
+  width: 60px;
+  height: 60px;
+  background-color: #ccc;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Mejora de espacio lateral general del contenido */
+.main-container.about {
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px; /* Se agregó para separar del borde */
+  }
+  
+  /* Contenedor de contenido dividido (izquierda y derecha) */
+  .about-content {
+    display: flex;
+
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 10px; /* separación adicional dentro del grid */
+  }
+  
+  /* Ajuste en el texto "Sobre nosotros" */
+  .equipo {
+    flex: 1 1 50%;
+    padding-right: 10px; /* más espacio entre texto e integrantes */
+  }
+  
+  /* Cajas blancas de texto y tarjetas */
+  .box,
+  .integrante-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+  }
+  .menu-desplegable {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #1a0e0e;
+    color: white;
+    z-index: 1000;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+  }
+  
+  .menu-desplegable.visible {
+    display: flex;
+  }
+  
+  .menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  .menu-header .search-bar {
+    flex: 1;
+    max-width: 400px;
+  }
+  
+  .close-btn {
+    background: white;
+    color: black;
+    border: none;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  .menu-columns {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .column h2 {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .column ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  .column li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .icono {
+    width: 20px;
+    height: 20px;
+  }

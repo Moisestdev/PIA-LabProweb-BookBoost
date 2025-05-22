@@ -1,0 +1,249 @@
+/* ======== ESTILOS BASE / NAVBAR GENERAL ======== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e0e0e0;
+  }
+  
+  .header {
+    background: #1a0e0e;
+    color: white;
+    padding: 10px 0;
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 50%;
+  }
+  
+  .menu-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .search-bar {
+    padding: 6px;
+    border-radius: 5px;
+    border: none;
+    flex-grow: 1;
+    max-width: 300px;
+  }
+  
+  .add-btn {
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ======== ESTILOS ESPECÍFICOS: Recuperación ======== */
+  .main-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    margin-bottom: 30px;
+    font-size: 24px;
+  }
+  
+  .formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .formulario label {
+    align-self: flex-start;
+    margin: 10px 0 5px;
+    font-weight: bold;
+  }
+  
+  .formulario input {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+  
+  .formulario button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #2c2c2c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  
+  .formulario button:hover {
+    background-color: #444;
+  }
+  
+  /* ======== REGISTRO DE CUENTA ======== */
+.registro-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .columna {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 300px;
+  }
+  
+  .columna label {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .columna input,
+  .columna select {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+    background-color: #ece5ee;
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .columna select {
+    cursor: pointer;
+  }
+  
+  .boton-registro {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .boton-registro button {
+    padding: 10px 20px;
+    font-size: 15px;
+    background-color: #2c2c2c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .boton-registro button:hover {
+    background-color: #444;
+  }
+  .menu-desplegable {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #1a0e0e;
+    color: white;
+    z-index: 1000;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+  }
+  
+  .menu-desplegable.visible {
+    display: flex;
+  }
+  
+  .menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  .menu-header .search-bar {
+    flex: 1;
+    max-width: 400px;
+  }
+  
+  .close-btn {
+    background: white;
+    color: black;
+    border: none;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  .menu-columns {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .column h2 {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .column ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  .column li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .icono {
+    width: 20px;
+    height: 20px;
+  }
+  
