@@ -1,13 +1,14 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const abrirMenu = document.getElementById("abrirMenu");
-  const cerrarMenu = document.getElementById("cerrarMenu");
-  const menu = document.getElementById("menuDesplegable");
+$(document).ready(function() {
+  const $abrirMenu = $("#abrirMenu");
+  const $menu = $("#menuDesplegable");
 
-  abrirMenu.addEventListener("click", () => {
-    menu.classList.add("visible");
-  });
+  $abrirMenu.hover(
+    function() {
+      $menu.addClass("visible");
+    }
+  );
 
-  cerrarMenu.addEventListener("click", () => {
-    menu.classList.remove("visible");
+  $menu.mouseleave(function() {
+    $menu.removeClass("visible");
   });
 });
