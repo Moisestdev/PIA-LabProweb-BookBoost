@@ -1,3 +1,4 @@
+// Jsquery para el menu
 $(document).ready(function() {
   const $abrirMenu = $("#abrirMenu");
   const $menu = $("#menuDesplegable");
