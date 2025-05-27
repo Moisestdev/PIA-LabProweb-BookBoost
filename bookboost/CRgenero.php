@@ -38,18 +38,24 @@ $generos = $conn->query("SELECT * FROM genero");
 <body>
 
 <header class="header">
-    <div class="nav-container">
-      <div class="logo"></div>
-      <button id="abrirMenu"class="menu-btn">☰ Menú</button>
-      <form method="GET" action="buscar.php" class="search-form">
+  <div class="nav-container">
+    <div class="logo"></div>
+    <button id="abrirMenu" class="menu-btn">☰ Menú</button>
+    <form method="GET" action="buscar.php" class="search-form" style="display: flex; gap: 5px;">
+  <select name="filtro" class="filtro-selector">
+    <option value="todos">Todos</option>
+    <option value="genero">Género</option>
+    <option value="autor">Autor</option>
+  </select>
   <input type="text" name="q" placeholder="Buscar libro..." class="search-bar">
+  <button type="submit">Buscar</button>
 </form>
 
-      <a >Bienvenido, <?php echo $_SESSION['correo']; ?> 👋</a>
-      <a href="Perfil.php">Perfil</a>
-      <button class="add-btn">+</button>
-    </div>
-  </header>
+    <a>Bienvenido, <?php echo $_SESSION['correo']; ?> 👋</a>
+    <a href="Perfil.php">Perfil</a>
+    <button class="add-btn">+</button>
+  </div>
+</header>
 
 <main class="main-container">
  <section id="Cr-reseñas">
@@ -114,8 +120,10 @@ while ($g = $generos->fetch_assoc()) {
   <div class="admin-panel">
     <h2>Administrador</h2>
     <ul>
-      <li><a href="CL.php">Publicación de libro</a></li>
-      <li><a href="CRgenero.php">Edición de géneros de libro</a></li>
+          <li><a href="CL.php">Publicación de libro</a></li>
+          <li><a href="CRgenero.php">Edición de géneros de libro</a></li>
+          <li><a href="eliminarlibro.php">Administrar libros</a></li>
+          <li><a href="Graficos.php">Estadisticas</a></li>
     </ul>
   </div>
 <?php endif; ?>

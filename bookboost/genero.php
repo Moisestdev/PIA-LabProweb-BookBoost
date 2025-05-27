@@ -32,12 +32,17 @@ $result = $stmt->get_result();
   <div class="nav-container">
     <div class="logo"></div>
     <button id="abrirMenu" class="menu-btn">☰ Menú</button>
-    <form method="GET" action="buscar.php" class="search-form">
-      <input type="text" name="q" placeholder="Buscar libro..." class="search-bar">
-    </form>
-    <?php if (isset($_SESSION['correo'])): ?>
-      <a>Bienvenido, <?php echo htmlspecialchars($_SESSION['correo']); ?> 👋</a>
-    <?php endif; ?>
+    <form method="GET" action="buscar.php" class="search-form" style="display: flex; gap: 5px;">
+  <select name="filtro" class="filtro-selector">
+    <option value="todos">Todos</option>
+    <option value="genero">Género</option>
+    <option value="autor">Autor</option>
+  </select>
+  <input type="text" name="q" placeholder="Buscar libro..." class="search-bar">
+  <button type="submit">Buscar</button>
+</form>
+
+    <a>Bienvenido, <?php echo $_SESSION['correo']; ?> 👋</a>
     <a href="Perfil.php">Perfil</a>
     <button class="add-btn">+</button>
   </div>
@@ -62,48 +67,52 @@ $result = $stmt->get_result();
 
 <!-- Menú desplegable -->
 <div id="menuDesplegable" class="menu-desplegable oculto">
-  <div class="menu-content">
-    <div class="menu-header">
-      <div class="logo"></div>
-      <form method="GET" action="buscar.php" class="search-form">
-        <input type="text" name="q" placeholder="Buscar libro..." class="search-bar">
-      </form>
-      <button id="cerrarMenu" class="close-btn">✕</button>
-    </div>
+    <div class="menu-content">
+      <div class="menu-header">
+        <div class="logo"></div>
+        <form method="GET" action="buscar.php" class="search-form">
+  <input type="text" name="q" placeholder="Buscar libro..." class="search-bar">
+</form>
 
-    <div class="menu-columns">
-      <div class="column">
-        <h2>Géneros</h2>
-        <ul>
-          <?php
-          $generos = $conn->query("SELECT id_genero, nombre_genero FROM genero");
-          while ($g = $generos->fetch_assoc()) {
-              echo '<li><a href="genero.php?id=' . $g['id_genero'] . '">' . htmlspecialchars($g['nombre_genero']) . '</a></li>';
-          }
-          ?>
-        </ul>
+        <button id="cerrarMenu" class="close-btn">✕</button>
       </div>
-
-      <?php if (isset($_SESSION['rol_usuario']) && $_SESSION['rol_usuario'] == 1): ?>
-        <div class="admin-panel">
-          <h2>Administrador</h2>
-          <ul>
-            <li><a href="CL.php">Publicación de libro</a></li>
-            <li><a href="CRgenero.php">Edición de géneros de libro</a></li>
-          </ul>
-        </div>
-      <?php endif; ?>
-
+  
+      <div class="menu-columns">
       <div class="column">
-        <h2>Sobre nosotros</h2>
-        <ul>
+  <h2>Géneros</h2>
+  <ul>
+<?php
+$generos = $conn->query("SELECT id_genero, nombre_genero FROM genero");
+
+while ($g = $generos->fetch_assoc()) {
+  echo '<li><a href="genero.php?id=' . $g['id_genero'] . '">' . htmlspecialchars($g['nombre_genero']) . '</a></li>';
+}
+?>
+</ul>
+
+</div>
+<?php if ($_SESSION['rol_usuario'] == 1): ?>
+  <div class="admin-panel">
+    <h2>Administrador</h2>
+    <ul>
+          <li><a href="CL.php">Publicación de libro</a></li>
+          <li><a href="CRgenero.php">Edición de géneros de libro</a></li>
+          <li><a href="eliminarlibro.php">Administrar libros</a></li>
+          <li><a href="Graficos.php">Estadisticas</a></li>
+    </ul>
+  </div>
+<?php endif; ?>
+
+        <div class="column">
+          <h2>Sobre nosotros</h2>
+          <ul>
           <li><a href="lobby.php">Inicio</a></li>
           <li><a href="sobre.php">Contacto</a></li>
-        </ul>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 <script src="menu.js"></script>
 </body>

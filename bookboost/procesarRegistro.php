@@ -13,13 +13,15 @@ $stmt = $conn->prepare("INSERT INTO usuario (nombre_usuario, correo_usuario, eda
 
 $stmt->bind_param("ssisis", $nombre, $correo, $edad, $contrasena, $ocupacion, $rol);
 
+// Redirige si se ejecuta correctamente
 if ($stmt->execute()) {
-    header("Location: Registro.html");
+    $stmt->close();
+    $conn->close();
+    header("Location: lobby.php");
     exit();
 } else {
     echo "Error al registrar: " . $stmt->error;
+    $stmt->close();
+    $conn->close();
 }
-
-$stmt->close();
-$conn->close();
 ?>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("conexion.php");
 
 $id_libro = $_GET['id']; // default a libro con ID 1 si no se pasa por URL
@@ -41,18 +42,25 @@ $resenas = $stmt->get_result();
   <link rel="stylesheet" href="libro.css" />
 </head>
 <body>
+<header class="header">
+  <div class="nav-container">
+    <div class="logo"></div>
+    <button id="abrirMenu" class="menu-btn">☰ Menú</button>
+    <form method="GET" action="buscar.php" class="search-form" style="display: flex; gap: 5px;">
+  <select name="filtro" class="filtro-selector">
+    <option value="todos">Todos</option>
+    <option value="genero">Género</option>
+    <option value="autor">Autor</option>
+  </select>
+  <input type="text" name="q" placeholder="Buscar libro..." class="search-bar">
+  <button type="submit">Buscar</button>
+</form>
 
-  <header class="header">
-    <div class="nav-container">
-      <div class="logo"></div>
-      <button class="menu-btn">☰ Menú</button>
-      <input type="text" class="search-bar" placeholder="Buscar">
-      <a href="IS.html">Iniciar sesión</a>
-      <a href="#">Perfil</a>
-      <button class="add-btn">+</button>
-    </div>
-  </header>
-
+    <a>Bienvenido, <?php echo $_SESSION['correo']; ?> 👋</a>
+    <a href="Perfil.php">Perfil</a>
+    <button class="add-btn">+</button>
+  </div>
+</header>
   <main class="main-container libro-detalle">
     <h1><?php echo htmlspecialchars($libro['nombre_libro']); ?></h1>
 
@@ -87,8 +95,8 @@ $resenas = $stmt->get_result();
         <p>No hay reseñas para este libro todavía.</p>
       <?php endif; ?>
     
-      <div class="btn-resena">
-  <a href="reseña.php?id=<?php echo urlencode($id_libro); ?>">
+<div class="btn-resena">
+  <a href="reseña.php?id=<?php echo urlencode($id_libro); ?>&titulo=<?php echo urlencode($libro['nombre_libro']); ?>&genero=<?php echo urlencode($libro['nombre_genero']); ?>">
     <button>Agregar reseña</button>
   </a>
 </div>
@@ -96,6 +104,54 @@ $resenas = $stmt->get_result();
     </section>
     
   </main>
+<!-- Menú desplegable -->
+<div id="menuDesplegable" class="menu-desplegable oculto">
+    <div class="menu-content">
+      <div class="menu-header">
+        <div class="logo"></div>
+        <form method="GET" action="buscar.php" class="search-form">
+  <input type="text" name="q" placeholder="Buscar libro..." class="search-bar">
+</form>
 
+        <button id="cerrarMenu" class="close-btn">✕</button>
+      </div>
+  
+      <div class="menu-columns">
+      <div class="column">
+  <h2>Géneros</h2>
+  <ul>
+<?php
+$generos = $conn->query("SELECT id_genero, nombre_genero FROM genero");
+
+while ($g = $generos->fetch_assoc()) {
+  echo '<li><a href="genero.php?id=' . $g['id_genero'] . '">' . htmlspecialchars($g['nombre_genero']) . '</a></li>';
+}
+?>
+</ul>
+
+</div>
+<?php if ($_SESSION['rol_usuario'] == 1): ?>
+  <div class="admin-panel">
+    <h2>Administrador</h2>
+    <ul>
+          <li><a href="CL.php">Publicación de libro</a></li>
+          <li><a href="CRgenero.php">Edición de géneros de libro</a></li>
+          <li><a href="eliminarlibro.php">Administrar libros</a></li>
+          <li><a href="Graficos.php">Estadisticas</a></li>
+    </ul>
+  </div>
+<?php endif; ?>
+
+        <div class="column">
+          <h2>Sobre nosotros</h2>
+          <ul>
+          <li><a href="lobby.php">Inicio</a></li>
+          <li><a href="sobre.php">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
+<script src="menu.js"></script>
 </html>

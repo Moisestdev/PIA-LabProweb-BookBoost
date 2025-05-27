@@ -157,24 +157,32 @@ body {
   align-items: flex-start;
   gap: 15px;
 }
+    .reseña-info p {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      max-width: 100%;
+      white-space: normal;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
 
 
 
-.reseña-info {
-  flex: 1;
-}
 
 .reseña-info strong {
   display: block;
   font-size: 1rem;
   margin-bottom: 5px;
 }
-
-.reseña-info p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #333;
-}
+    .reseña-info p {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      max-width: 100%;
+      white-space: normal;
+    }
 
 .reseña-botones {
   margin-top: 8px;
@@ -287,9 +295,7 @@ button:hover {
   object-fit: cover;
 }
 
-.reseña-info {
-  flex: 1;
-}
+
 
 .reseña-info strong {
   font-size: 1.1rem;
@@ -297,10 +303,6 @@ button:hover {
   display: block;
 }
 
-.reseña-info p {
-  font-size: 0.95rem;
-  margin-bottom: 10px;
-}
 
 .reseña-botones {
   display: flex;

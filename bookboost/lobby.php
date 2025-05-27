@@ -27,30 +27,43 @@ $sql = "SELECT l.id_libro, l.nombre_libro, l.portada_url
 </head>
 <body>
   <header class="header">
-    <div class="nav-container">
-      <div class="logo"></div>
-      <button id="abrirMenu"class="menu-btn">☰ Menú</button>
-      <form method="GET" action="buscar.php" class="search-form">
+  <div class="nav-container">
+    <div class="logo"></div>
+    <button id="abrirMenu" class="menu-btn">☰ Menú</button>
+    <form method="GET" action="buscar.php" class="search-form" style="display: flex; gap: 5px;">
+  <select name="filtro" class="filtro-selector">
+    <option value="todos">Todos</option>
+    <option value="genero">Género</option>
+    <option value="autor">Autor</option>
+  </select>
   <input type="text" name="q" placeholder="Buscar libro..." class="search-bar">
+  <button type="submit">Buscar</button>
 </form>
 
-      <a >Bienvenido, <?php echo $_SESSION['correo']; ?> 👋</a>
-      <a href="Perfil.php">Perfil</a>
-      <button class="add-btn">+</button>
-    </div>
-  </header>
+    <a>Bienvenido, <?php echo $_SESSION['correo']; ?> 👋</a>
+    <a href="Perfil.php">Perfil</a>
+    <button class="add-btn">+</button>
+  </div>
+</header>
 
   <main>
-    <section class="carousel">
-      <div class="carousel-item destacado">
-        <button class="arrow left">←</button>
-        <div class="text">
-          <h2>DESTACADOS</h2>
+    <?php
+// Ejecutamos de nuevo para obtener el primer libro destacado (si no lo quieres repetir, almacénalo antes)
+$resultado = $conn->query($sql);
+$destacado = $resultado->fetch_assoc();
+?>
+<section class="carousel">
+  <div class="carousel-item destacado" style="position: relative; background-image: url('<?php echo $destacado['portada_url']; ?>'); background-size: cover; background-position: center; height: 400px; color: white;">
+    <div class="text" style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.5); padding: 10px;">
+      <h2>📘 Libro destacado</h2>
+      <h3><?php echo htmlspecialchars($destacado['nombre_libro']); ?></h3>
+      <a href="libro.php?id=<?php echo $destacado['id_libro']; ?>">
+        <button style="margin-top: 10px;">Ver reseñas</button>
+      </a>
+    </div>
+  </div>
+</section>
 
-        </div>
-      </div>
-
-    </section>
 
     <section class="reseñas">
       <h2>Reseñas destacadas de libros</h2>
@@ -104,8 +117,10 @@ while ($g = $generos->fetch_assoc()) {
   <div class="admin-panel">
     <h2>Administrador</h2>
     <ul>
-      <li><a href="CL.php">Publicación de libro</a></li>
-      <li><a href="CRgenero.php">Edición de géneros de libro</a></li>
+          <li><a href="CL.php">Publicación de libro</a></li>
+          <li><a href="CRgenero.php">Edición de géneros de libro</a></li>
+          <li><a href="eliminarlibro.php">Administrar libros</a></li>
+          <li><a href="Graficos.php">Estadisticas</a></li>
     </ul>
   </div>
 <?php endif; ?>

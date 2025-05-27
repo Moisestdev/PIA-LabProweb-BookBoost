@@ -1,24 +1,44 @@
 <?php
 session_start();
+include("conexion.php");
+
+// Verificar que el usuario sea administrador
 if (!isset($_SESSION['id_usuario']) || $_SESSION['rol_usuario'] != 1) {
     die("Acceso denegado.");
 }
-include("conexion.php");
-$generos = $conn->query("SELECT id_genero, nombre_genero FROM genero");
 
+// Si viene solicitud para eliminar un libro
+if (isset($_GET['eliminar'])) {
+    $id_eliminar = intval($_GET['eliminar']);
+
+    // Eliminar el libro de la base de datos
+    $stmt = $conn->prepare("DELETE FROM libro WHERE id_libro = ?");
+    $stmt->bind_param("i", $id_eliminar);
+    if ($stmt->execute()) {
+        echo "<script>alert('Libro eliminado correctamente.'); window.location.href='eliminarlibro.php';</script>";
+        exit();
+    } else {
+        echo "<script>alert('Error al eliminar el libro.');</script>";
+    }
+}
+
+// Obtener todos los libros con su género y autor
+$sql = "
+SELECT l.id_libro, l.nombre_libro, l.portada_url, g.nombre_genero, a.nombre_autor
+FROM libro l
+JOIN genero g ON l.id_genero = g.id_genero
+JOIN autor a ON l.id_autor = a.id_autores
+";
+$result = $conn->query($sql);
 ?>
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Edición de libro</title>
-  <link rel="stylesheet" href="CS.css" />
+  <meta charset="UTF-8">
+  <title>Administrar libros</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-
 <header class="header">
   <div class="nav-container">
     <div class="logo"></div>
@@ -39,48 +59,26 @@ $generos = $conn->query("SELECT id_genero, nombre_genero FROM genero");
   </div>
 </header>
 
-  <main class="main-container">
-    <h1>Creación de libro</h1>
-    <form class="resena-form" method="POST" action="crearLibro.php">
-      <div class="form-top">
-        <div class="img-preview">
-          <img id="previewImage" src="placeholder.png" alt="Imagen del libro" />
+<main class="reseñas">
+  <h2>Administrar todos los libros</h2>
+  <div class="cards">
+    <?php if ($result->num_rows > 0): ?>
+      <?php while ($fila = $result->fetch_assoc()): ?>
+        <div class="card">
+          <div class="img-placeholder" style="background-image: url('<?php echo $fila['portada_url']; ?>'); background-size: cover; background-position: center; height: 200px;"></div>
+          <h3><?php echo htmlspecialchars($fila['nombre_libro']); ?></h3>
+          <p><strong>Autor:</strong> <?php echo htmlspecialchars($fila['nombre_autor']); ?></p>
+          <p><strong>Género:</strong> <?php echo htmlspecialchars($fila['nombre_genero']); ?></p>
+          <a href="eliminarlibro.php?eliminar=<?php echo $fila['id_libro']; ?>" onclick="return confirm('¿Estás seguro de que deseas eliminar este libro?');">
+            <button style="background-color: red; color: white;">Eliminar libro</button>
+          </a>
         </div>
-    
-        <div class="form-fields">
-          <label for="titulo">Título de libro</label>
-          <input type="text" name="titulo" id="titulo" required />
-    
-          <label for="genero">Género del libro</label>
-<select name="genero" id="genero" required>
-  <option value="">Selecciona un género</option>
-  <?php while ($g = $generos->fetch_assoc()): ?>
-    <option value="<?php echo $g['id_genero']; ?>">
-      <?php echo htmlspecialchars($g['nombre_genero']); ?>
-    </option>
-  <?php endwhile; ?>
-</select>
-
-    
-    
-<label for="autor">Nombre del autor</label>
-<input type="text" name="autor" id="autor" required />
-    
-          <label for="imagen_url">URL de la imagen</label>
-          <input type="text" name="imagen_url" id="imagen_url" placeholder="https://..." required />
-        </div>
-      </div>
-    
-      <div class="btn-row right">
-        <button type="submit">Crear libro</button>
-        <button type="button" onclick="window.location.href='lobby.php'">Cancelar</button>
-
-      </div>
-    </form>
-    
-  </main>
-
-  <input type="file" id="fileInput" accept="image/*" style="display: none;" />
+      <?php endwhile; ?>
+    <?php else: ?>
+      <p>No hay libros registrados en la base de datos.</p>
+    <?php endif; ?>
+  </div>
+</main>
 
 <!-- Menú desplegable -->
 <div id="menuDesplegable" class="menu-desplegable oculto">
@@ -130,7 +128,7 @@ while ($g = $generos->fetch_assoc()) {
       </div>
     </div>
   </div>
+
 <script src="menu.js"></script>
-  <script src="CR.js"></script>
 </body>
 </html>
