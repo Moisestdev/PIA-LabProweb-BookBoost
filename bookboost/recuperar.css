@@ -246,4 +246,26 @@ body {
     width: 20px;
     height: 20px;
   }
-  
+ .content {
+    
+    border-style: solid;
+    height: 600px;
+    max-width: 1200px;
+    padding: 20px;
+    border-color: #444;
+    border-width: 20px;
+    
+  }
+.chart{
+  margin: 0 auto!important; 
+  width: 100%!important;
+  height: 400px !important;
+}
+#Filtrar {
+  border-radius: 5px;
+  margin-top: 20px;        
+  margin-bottom: 20px;    
+  font-size: 14px;
+  width: auto;                   
+  display: inline-block;   
+}
