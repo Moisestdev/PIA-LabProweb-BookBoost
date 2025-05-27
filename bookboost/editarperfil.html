@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edición de perfil</title>
+  <link rel="stylesheet" href="editarperfil.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="nav-container">
+    <div class="logo"></div>
+    <button id="abrirMenu" class="menu-btn">☰ Menú</button>
+    <input type="text" placeholder="Buscar" class="search-bar">
+    <a href="IS.html">Iniciar sesión</a>
+    <a href="Perfil.html">Perfil</a>
+    <button class="add-btn">+</button>
+  </div>
+</header>
+
+<main class="main-container">
+  <h1>Edición de perfil</h1>
+
+  <section class="perfil-usuario">
+    <div class="perfil-info">
+      <div class="perfil-img">
+        <img src="placeholder.png" alt="Foto de perfil" />
+      </div>
+      <div class="perfil-desc">
+        <h2>Usuario</h2>
+        <textarea placeholder="Escribe tu descripción breve aquí..."></textarea>
+        <div class="btn-row">
+          <button>Cambiar foto de perfil</button>
+          <button>Eliminar foto de perfil</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="perfil-reseñas">
+    <h3>Actualiza tu descripción</h3>
+    <textarea placeholder="Escribe tu nueva descripción..."></textarea>
+    <div class="btn-row right">
+      <button>Actualizar perfil</button>
+      <button>Cancelar</button>
+    </div>
+  </section>
+</main>
+<!-- Menú desplegable -->
+<div id="menuDesplegable" class="menu-desplegable oculto">
+  <div class="menu-content">
+    <div class="menu-header">
+      <div class="logo"></div>
+      <input type="text" placeholder="Buscar" class="search-bar">
+      <button id="cerrarMenu" class="close-btn">✕</button>
+    </div>
+
+    <div class="menu-columns">
+      <div class="column">
+        <h2><img src="icon.png" alt="" class="icono"> Géneros</h2>
+        <ul>
+          <li>Suspenso y misterio</li>
+          <li>Romance</li>
+          <li>Ciencia ficción</li>
+          <li>Divulgación científica</li>
+          <li>Leyenda y aventura</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h2><img src="icon.png" alt="" class="icono"> Sobre nosotros</h2>
+        <ul>
+          <li>Contacto</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="menu.js"></script>
+<script src="perfil.js"></script>
+</body>
+</html>

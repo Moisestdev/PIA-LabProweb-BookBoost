@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edición de libro</title>
+  <link rel="stylesheet" href="edicionLibro.css">
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <header class="header">
+    <div class="nav-container">
+      <div class="logo"></div>
+      <button class="menu-btn">☰ Menú</button>
+      <input type="text" class="search-bar" placeholder="Buscar">
+      <a href="#">Iniciar sesión</a>
+      <a href="#">Perfil</a>
+      <button class="add-btn">+</button>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="main-container">
+    <h1>Edición de libro</h1>
+
+ 
+        <div class="campos-libro">
+          <label for="titulo">Título de libro</label>
+          <select id="titulo" name="titulo">
+            <option value="">Selecciona el título</option>
+            <!-- Opciones dinámicas -->
+          </select>
+      
+          <label for="genero">Género de libro</label>
+          <input type="text" id="genero" name="genero" readonly>
+      
+          <label for="descripcion">Descripción</label>
+          <input type="text" id="descripcion" name="descripcion">
+        </div>
+      </div>
+      
+
+    <div class="reseña-area">
+      <label for="resena"><strong>Reseña</strong></label>
+      <textarea id="resena" rows="5"></textarea>
+    </div>
+
+    <div class="botones-final">
+      <button>Crear reseña</button>
+      <button>Cancelar</button>
+    </div>
+  </main>
+
+</body>
+</html>

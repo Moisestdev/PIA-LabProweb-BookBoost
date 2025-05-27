@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #e3e3e3;
+}
+
+.header {
+  background: #1a0e0e;
+  color: white;
+  padding: 10px 0;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+.img-placeholder {
+  background: #666;
+  height: 200px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.logo {
+  width: 60px;
+  height: 30px;
+  background: #ccc;
+  border-radius: 50%;
+}
+
+.menu-btn {
+  background: none;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.search-bar {
+  flex: 1;
+  min-width: 200px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: none;
+  max-width: 300px;
+}
+
+.nav-container a,
+.add-btn {
+  color: white;
+  text-decoration: none;
+}
+
+.add-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: none;
+  font-size: 20px;
+  padding: 0;
+  line-height: 26px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.menu-desplegable {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #1a0e0e;
+  color: white;
+  z-index: 1000;
+  padding: 20px;
+  display: none;
+  flex-direction: column;
+}
+
+.menu-desplegable.visible {
+  display: flex;
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.menu-header .search-bar {
+  flex: 1;
+  max-width: 400px;
+}
+
+.close-btn {
+  background: white;
+  color: black;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.menu-columns {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.column h2 {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.column li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.icono {
+  width: 20px;
+  height: 20px;
+}
+.main-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.libro-formulario {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.imagen-libro img {
+  width: 120px;
+  height: 140px;
+  object-fit: cover;
+  border: 2px solid #999;
+}
+
+.btn-imagen {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.campos-libro {
+  flex-grow: 1;
+}
+
+.campos-libro label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.campos-libro input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.reseña-area {
+  margin-top: 20px;
+}
+
+.reseña-area textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+.botones-final {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.botones-final button {
+  padding: 8px 15px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  
+  body {
+    background: #e0e0e0;
+  }
+  
+  .header {
+    background: #1a0e0e;
+    color: white;
+    padding: 10px 0;
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    width: 60px;
+    height: 30px;
+    background: #ccc;
+    border-radius: 50%;
+  }
+  
+  .menu-btn {
+    background: none;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .search-bar {
+    flex: 1;
+    min-width: 200px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: none;
+    max-width: 300px;
+  }
+  
+  .nav-container a,
+  .add-btn {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .add-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: none;
+    font-size: 20px;
+    padding: 0;
+    line-height: 26px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .carousel {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .carousel-item {
+    flex: 1;
+    background: #b3a8a8;
+    height: 200px;
+    position: relative;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  .carousel-item .arrow {
+    position: absolute;
+    top: 10px;
+    font-size: 20px;
+    background: white;
+    border: none;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .left {
+    left: 10px;
+  }
+  
+  .right {
+    right: 10px;
+  }
+  
+  .carousel-item .text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+  }
+  
+  .reseñas {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .reseñas h2 {
+    margin-bottom: 15px;
+  }
+  
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+  }
+  
+  .card {
+    background: #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .img-placeholder {
+    background: #666;
+    height: 120px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .card button {
+    background: #1a0e0e;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width: 900px) {
+    .cards {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+  
+    .nav-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .search-bar {
+      width: 100%;
+      max-width: none;
+      margin-top: 10px;
+    }
+  }
+  
+  .menu-desplegable {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #1a0e0e;
+    color: white;
+    z-index: 1000;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+  }
+  
+  .menu-desplegable.visible {
+    display: flex;
+  }
+  
+  .menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  .menu-header .search-bar {
+    flex: 1;
+    max-width: 400px;
+  }
+  
+  .close-btn {
+    background: white;
+    color: black;
+    border: none;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  .menu-columns {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .column h2 {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .column ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  .column li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .icono {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Página de inicio de sesión */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 20px;
+    background-color: #d3d3d3;
+    min-height: 100vh;
+    gap: 40px;
+  }
+  
+  .login-form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    width: 350px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+  
+  .login-form h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .login-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .login-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .btn {
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    flex: 1;
+  }
+  
+  .btn.full-width {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .login-benefits {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+  
+  .login-benefits h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .login-benefits p {
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  
+  .navbar {
+    background-color: #1a0e0e;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+    gap: 20px;
+  }
+  
+  .navbar .logo {
+    width: 50px;
+    height: 30px;
+    background: gray;
+    border-radius: 50px;
+  }
+  
+  .search-bar {
+    flex: 1;
+    max-width: 400px;
+    padding: 8px;
+    border-radius: 20px;
+    border: none;
+  }
+  
+  .menu-btn, .nav-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  

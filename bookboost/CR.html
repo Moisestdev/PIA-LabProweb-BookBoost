@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edición de libro</title>
+  <link rel="stylesheet" href="CS.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="nav-container">
+      <div class="logo"></div>
+      <button id="abrirMenu" class="menu-btn">☰ Menú</button>
+      <input type="text" placeholder="Buscar" class="search-bar">
+      <a href="IS.html">Iniciar sesión</a>
+      <a href="Perfil.html">Perfil</a>
+      <button class="add-btn">+</button>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <h1>Creación de libro</h1>
+    <form class="resena-form" method="POST" action="crearLibro.php">
+      <div class="form-top">
+        <div class="img-preview">
+          <img id="previewImage" src="placeholder.png" alt="Imagen del libro" />
+        </div>
+    
+        <div class="form-fields">
+          <label for="titulo">Título de libro</label>
+          <input type="text" name="titulo" id="titulo" required />
+    
+          <label for="genero">Género (ID)</label>
+          <input type="number" name="genero" id="genero" required />
+    
+    
+          <label for="autor">Autor (ID)</label>
+          <input type="number" name="autor" id="autor" required />
+    
+          <label for="imagen_url">URL de la imagen</label>
+          <input type="text" name="imagen_url" id="imagen_url" placeholder="https://..." required />
+        </div>
+      </div>
+    
+      <div class="btn-row right">
+        <button type="submit">Crear libro</button>
+        <button type="reset">Cancelar</button>
+      </div>
+    </form>
+    
+  </main>
+
+  <input type="file" id="fileInput" accept="image/*" style="display: none;" />
+
+<!-- Menú desplegable -->
+<div id="menuDesplegable" class="menu-desplegable oculto">
+  <div class="menu-content">
+    <div class="menu-header">
+      <div class="logo"></div>
+      <input type="text" placeholder="Buscar" class="search-bar">
+      <button id="cerrarMenu" class="close-btn">✕</button>
+    </div>
+
+    <div class="menu-columns">
+      <div class="column">
+        <h2><img src="icon.png" alt="" class="icono"> Géneros</h2>
+        <ul>
+          <li>Suspenso y misterio</li>
+          <li>Romance</li>
+          <li>Ciencia ficción</li>
+          <li>Divulgación científica</li>
+          <li>Leyenda y aventura</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h2><img src="icon.png" alt="" class="icono"> Sobre nosotros</h2>
+        <ul>
+          <li>Contacto</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="menu.js"></script>
+  <script src="CR.js"></script>
+</body>
+</html>

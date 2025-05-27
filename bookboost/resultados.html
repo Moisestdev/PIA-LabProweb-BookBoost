@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resultados de búsqueda</title>
+  <link rel="stylesheet" href="resultados.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="nav-container">
+      <div class="logo"></div>
+      <button id="abrirMenu"class="menu-btn">☰ Menú</button>
+      <input type="text" placeholder="Buscar" class="search-bar">
+      <a href="IS.html">Iniciar sesión</a>
+      <a href="Perfil.html">Perfil</a>
+      <button class="add-btn">+</button>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <h1>Resultados de busqueda</h1>
+
+    <section class="libro-card">
+      <div class="libro-img">
+        <img src="placeholder.png" alt="Portada del libro">
+      </div>
+      <div class="libro-info">
+        <h2>Título del libro</h2>
+        <p>
+          Descripción de la reseña Descripción de la reseña Descripción de la reseña
+          Descripción de la reseña Descripción de la reseña Descripción de la reseña
+          Descripción de la reseña Descripción de la reseña Descripción de la reseña
+          Descripción de la reseña Descripción de la reseña Descripción de la reseña
+        </p>
+      </div>
+    </section>
+
+    <section class="libro-card">
+      <div class="libro-img">
+        <img src="placeholder.png" alt="Portada del libro">
+      </div>
+      <div class="libro-info">
+        <h2>Título del libro</h2>
+        <p>
+          Descripción de la reseña Descripción de la reseña Descripción de la reseña
+          Descripción de la reseña Descripción de la reseña Descripción de la reseña
+          Descripción de la reseña Descripción de la reseña Descripción de la reseña
+          Descripción de la reseña Descripción de la reseña Descripción de la reseña
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+<!-- Menú desplegable -->
+<div id="menuDesplegable" class="menu-desplegable oculto">
+  <div class="menu-content">
+    <div class="menu-header">
+      <div class="logo"></div>
+      <input type="text" placeholder="Buscar" class="search-bar">
+      <button id="cerrarMenu" class="close-btn">✕</button>
+    </div>
+
+    <div class="menu-columns">
+      <div class="column">
+        <h2><img src="icon.png" alt="" class="icono"> Géneros</h2>
+        <ul>
+          <li>Suspenso y misterio</li>
+          <li>Romance</li>
+          <li>Ciencia ficción</li>
+          <li>Divulgación científica</li>
+          <li>Leyenda y aventura</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h2><img src="icon.png" alt="" class="icono"> Sobre nosotros</h2>
+        <ul>
+          <li>Contacto</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="menu.js"></script>
+</html>
