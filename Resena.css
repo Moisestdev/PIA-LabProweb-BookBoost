@@ -1,0 +1,29 @@
+.modal{ 
+    display: flex !important;
+    align-items: center; 
+    justify-content: center; 
+}
+.modal-content {   
+    background: #e0e0e0 !important;
+    min-height: 600px; 
+    width: 1000px; 
+    
+    
+  }
+.modal-body {
+    padding: 40px;
+    background: #fff;
+    width: 900px;
+    margin-left: 50px;
+    border: 20px solid #2c2c2c; 
+    box-sizing: border-box; 
+    word-break: break-word;
+}
+button {
+    background-color: #333 !important;
+    color: white !important;
+}
+
+
+
+
